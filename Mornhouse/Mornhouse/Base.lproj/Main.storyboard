@@ -1,0 +1,140 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="23727" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="XrK-Ko-qUC">
+    <device id="retina6_12" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="23721"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Navigation Controller-->
+        <scene sceneID="XOI-Qq-kej">
+            <objects>
+                <navigationController id="XrK-Ko-qUC" sceneMemberID="viewController">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="VR3-Bn-MWx">
+                        <rect key="frame" x="0.0" y="118" width="393" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <connections>
+                        <segue destination="BYZ-38-t0r" kind="relationship" relationship="rootViewController" id="PPE-kw-Rgk"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="EaZ-ZK-jxo" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-702" y="4"/>
+        </scene>
+        <!--Start View Controller-->
+        <scene sceneID="tne-QT-ifu">
+            <objects>
+                <viewController id="BYZ-38-t0r" customClass="StartViewController" customModule="Mornhouse" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
+                        <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Ваше число" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="j5l-kB-9E8">
+                                <rect key="frame" x="32" y="162" width="329" height="34"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" keyboardType="decimalPad" enablesReturnKeyAutomatically="YES"/>
+                            </textField>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="l1X-Ei-ZNL">
+                                <rect key="frame" x="32" y="212" width="329" height="76.666666666666686"/>
+                                <subviews>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Gyo-KA-FHq">
+                                        <rect key="frame" x="0.0" y="0.0" width="329" height="34.333333333333336"/>
+                                        <state key="normal" title="Button"/>
+                                        <buttonConfiguration key="configuration" style="plain" title="Отримати факт"/>
+                                        <connections>
+                                            <action selector="checkAction:" destination="BYZ-38-t0r" eventType="touchUpInside" id="PPQ-uq-axP"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="W4K-gt-O0L">
+                                        <rect key="frame" x="0.0" y="42.333333333333343" width="329" height="34.333333333333343"/>
+                                        <state key="normal" title="Button"/>
+                                        <buttonConfiguration key="configuration" style="plain" title="Отримати факт про випадкове число"/>
+                                        <connections>
+                                            <action selector="randomAction:" destination="BYZ-38-t0r" eventType="touchUpInside" id="fi8-ue-LaG"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            </stackView>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" showsVerticalScrollIndicator="NO" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="pI4-ZG-KEO">
+                                <rect key="frame" x="32" y="320.66666666666674" width="329" height="431.33333333333326"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                            </tableView>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="pI4-ZG-KEO" firstAttribute="top" secondItem="l1X-Ei-ZNL" secondAttribute="bottom" constant="32" id="NMs-bV-5Vk"/>
+                            <constraint firstItem="pI4-ZG-KEO" firstAttribute="trailing" secondItem="l1X-Ei-ZNL" secondAttribute="trailing" id="Si0-iO-LXU"/>
+                            <constraint firstItem="pI4-ZG-KEO" firstAttribute="leading" secondItem="l1X-Ei-ZNL" secondAttribute="leading" id="U6Z-Gn-Zed"/>
+                            <constraint firstItem="j5l-kB-9E8" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="32" id="dpB-cR-PrY"/>
+                            <constraint firstItem="l1X-Ei-ZNL" firstAttribute="leading" secondItem="j5l-kB-9E8" secondAttribute="leading" id="grL-Wd-bEm"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="j5l-kB-9E8" secondAttribute="trailing" constant="32" id="hc9-9F-cQB"/>
+                            <constraint firstItem="l1X-Ei-ZNL" firstAttribute="top" secondItem="j5l-kB-9E8" secondAttribute="bottom" constant="16" id="m6G-PF-Bkb"/>
+                            <constraint firstItem="j5l-kB-9E8" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="mBR-Wb-Ylw"/>
+                            <constraint firstItem="l1X-Ei-ZNL" firstAttribute="trailing" secondItem="j5l-kB-9E8" secondAttribute="trailing" id="n0i-q9-csR"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="pI4-ZG-KEO" secondAttribute="bottom" constant="32" id="oJg-9Z-Daj"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" id="BeB-A8-fQc"/>
+                    <connections>
+                        <outlet property="checkButton" destination="Gyo-KA-FHq" id="3PD-Zc-9NS"/>
+                        <outlet property="randomButton" destination="W4K-gt-O0L" id="PCN-uk-nhm"/>
+                        <outlet property="tableView" destination="pI4-ZG-KEO" id="2Re-EE-vRz"/>
+                        <outlet property="textField" destination="j5l-kB-9E8" id="1HL-1G-3ix"/>
+                        <segue destination="WZR-tb-zfJ" kind="show" identifier="fact" id="5SM-3J-Nbr"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="91" y="4"/>
+        </scene>
+        <!--Fact View Controller-->
+        <scene sceneID="OUj-Qg-La9">
+            <objects>
+                <viewController id="WZR-tb-zfJ" customClass="FactViewController" customModule="Mornhouse" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="nwi-XA-W1S">
+                        <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" editable="NO" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="PzA-qd-yII">
+                                <rect key="frame" x="32" y="194" width="329" height="558"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                <string key="text">Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Nam liber te conscient to factor tum poen legum odioque civiuda.</string>
+                                <color key="textColor" systemColor="labelColor"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                            </textView>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="LF4-Ll-Clh"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="LF4-Ll-Clh" firstAttribute="bottom" secondItem="PzA-qd-yII" secondAttribute="bottom" constant="32" id="I3M-L3-9BJ"/>
+                            <constraint firstItem="LF4-Ll-Clh" firstAttribute="trailing" secondItem="PzA-qd-yII" secondAttribute="trailing" constant="32" id="IEp-1I-Y9m"/>
+                            <constraint firstItem="PzA-qd-yII" firstAttribute="top" secondItem="LF4-Ll-Clh" secondAttribute="top" constant="32" id="Miq-4j-18Z"/>
+                            <constraint firstItem="PzA-qd-yII" firstAttribute="leading" secondItem="LF4-Ll-Clh" secondAttribute="leading" constant="32" id="dvJ-Qv-woE"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" id="LsO-dU-Tu8"/>
+                    <connections>
+                        <outlet property="textView" destination="PzA-qd-yII" id="zY2-wc-TpJ"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="ecF-C8-rnR" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="850" y="4"/>
+        </scene>
+    </scenes>
+    <resources>
+        <systemColor name="labelColor">
+            <color white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+    </resources>
+</document>
