@@ -99,17 +99,8 @@ class StartViewController: SuperViewController {
         constructor = MHTableConstructor(tableView: tableView, data: TableData())
         constructor?.handler = { [weak self] object in
             guard let mObject = object.object as? MHNumber else { return }
-            self?.performSegue(withIdentifier: "fact", sender: mObject)
+            self?.navigationController?.show(model: FactModel(number: mObject))
         }
-    }
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        guard
-            let object = sender as? MHNumber,
-            let vc = segue.destination as? FactViewController
-        else { return }
-        vc.number = object
     }
 
 }

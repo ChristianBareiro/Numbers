@@ -12,6 +12,7 @@ class SuperViewController: UIViewController, UIGestureRecognizerDelegate {
     
     var disposeBag: DisposeBag = .init()
     var constructor: MHTableConstructor? = nil
+    var model: BaseModel? = nil
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -31,3 +32,21 @@ class SuperViewController: UIViewController, UIGestureRecognizerDelegate {
 
 }
 
+class ContainerViewController: SuperViewController {
+    
+    @IBOutlet weak var stackView: UIStackView!
+    @IBOutlet weak var topStackView: UIStackView!
+    @IBOutlet weak var tableView: UITableView!
+    
+    static func controller<T: SuperViewController>(storyboardName: String = "Main", identifier: String = "container") -> T {
+        let storyboard = UIStoryboard(name: storyboardName, bundle: nil)
+        return storyboard.instantiateViewController(withIdentifier: identifier) as! T
+    }
+    
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        model?.mConstructor = MHTableConstructor(tableView: tableView, data: TableData())
+        model?.addViews?(topStackView)
+    }
+    
+}
